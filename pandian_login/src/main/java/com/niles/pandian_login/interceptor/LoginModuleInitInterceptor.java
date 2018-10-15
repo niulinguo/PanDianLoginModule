@@ -18,7 +18,7 @@ import com.niles.pandian_login.util.MyPreferences;
  * Date 2018/10/15 10:48
  * Email niulinguo@163.com
  */
-@Interceptor(priority = 1, name = "登录模块初始化拦截器")
+@Interceptor(priority = 100, name = "登录模块初始化拦截器")
 public class LoginModuleInitInterceptor implements IInterceptor {
     @Override
     public void process(Postcard postcard, InterceptorCallback callback) {
