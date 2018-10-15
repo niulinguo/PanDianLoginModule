@@ -2,7 +2,7 @@ package com.niles.pandianloginmodule;
 
 import android.app.Application;
 
-import com.niles.pandian_base.PanDianAppManager;
+import com.niles.appbase.AppManager;
 
 /**
  * Created by Niles
@@ -14,6 +14,6 @@ public class MyApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        PanDianAppManager.init(this, BuildConfig.DEBUG);
+        AppManager.init(this, BuildConfig.DEBUG);
     }
 }

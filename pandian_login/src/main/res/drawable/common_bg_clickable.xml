@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 实心 -->
+    <solid android:color="@color/background"/>
+
+    <!--
+        <corners android:radius="@dimen/dialog_radius"/>
+    -->
+    <!--描边-->
+    <stroke
+            android:width="@dimen/custom_bg_stroke_width"
+            android:color="@color/grey_light"/>
+
+    <padding android:left="@dimen/common_padding_middle"
+             android:right="@dimen/common_padding_middle"/>
+
+    <corners android:radius="@dimen/dialog_radius"/>
+</shape>

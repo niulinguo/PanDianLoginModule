@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="DialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@color/Transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+
+    </style>
+
+    <style name="text_mid">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+    </style>
+
+    <!--对话框-->
+    <style name="CustomDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowBackground">@color/Transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="register_text_style">
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/common_content_size</item>
+    </style>
+
+    <style name="common_text_normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:textSize">@dimen/common_text_size</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColorHint">@color/grey_hint</item>
+    </style>
+
+    <style name="CommonTitleTextView" parent="common_text_normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <!--TextView-->
+    <style name="CommonContentTextView" parent="common_text_normal">
+        <item name="android:textSize">@dimen/common_content_size</item>
+        <item name="android:textColor">@color/grey_text</item>
+    </style>
+    <!--TextView-->
+    <style name="CommonTimeTextView" parent="common_text_normal">
+        <item name="android:textSize">@dimen/common_time_size</item>
+        <item name="android:textColor">@color/grey_text</item>
+    </style>
+    <!--TextView-->
+    <style name="CommonSmallTextView" parent="common_text_normal">
+        <item name="android:textSize">@dimen/common_small_size</item>
+    </style>
+    <!--TextView-->
+    <style name="CommonSmallGrayTextView" parent="common_text_normal">
+        <item name="android:textSize">@dimen/common_small_size</item>
+        <item name="android:textColor">@color/grey_text</item>
+    </style>
+    <!--TextView-->
+    <style name="CommonTextView" parent="common_text_normal"></style>
+
+    <style name="common_listView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:divider">@color/line_color</item>
+        <item name="android:dividerHeight">0.5dp</item>
+        <item name="android:listSelector">@drawable/listview_item_bg_selector</item>
+        <item name="android:scrollbars">none</item>
+        <item name="android:fadeScrollbars">false</item>
+        <item name="android:fadingEdge">none</item>
+        <item name="android:cacheColorHint">@color/Transparent</item>
+        <item name="android:footerDividersEnabled">false</item>
+        <item name="android:headerDividersEnabled">false</item>
+    </style>
+
+    <!--Button-->
+    <style name="CommonButton" parent="common_text_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_btn_height</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingLeft">@dimen/common_padding_small</item>
+        <item name="android:paddingRight">@dimen/common_padding_small</item>
+        <item name="android:textSize">@dimen/common_content_size</item>
+        <item name="android:background">@drawable/common_bg_selector</item>
+    </style>
+
+    <!--Edittext-->
+    <style name="LoginEditText" parent="common_text_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/login_edit_height</item>
+        <item name="android:background">@color/Transparent</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <!--Edittext-->
+    <style name="mainLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">85dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <!--Edittext-->
+    <style name="asset_img">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!--Edittext-->
+    <style name="asset_radio" parent="CommonTimeTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/common_text_selector</item>
+        <item name="android:button">@null</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:checked">false</item>
+        <item name="android:background">@color/Transparent</item>
+    </style>
+    <!--Edittext-->
+    <style name="asset_detail_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:gravity">center</item>
+
+    </style>
+    <!--Edittext-->
+    <style name="asset_detail_text" parent="CommonContentTextView">
+        <item name="android:layout_width">@dimen/asset_width_half</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <!--Edittext-->
+    <style name="asset_detail_right" parent="CommonContentTextView">
+        <item name="android:layout_marginLeft">@dimen/common_top</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+
+    <!--Edittext-->
+    <style name="line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.5dp</item>
+        <item name="android:background">@color/line_color</item>
+    </style>
+    <!--Edittext-->
+    <style name="line_vertical">
+        <item name="android:layout_width">0.5dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/list_line</item>
+    </style>
+
+    <style name="PopupStyle">
+        <item name="android:windowEnterAnimation">@anim/product_popup_anim_in</item>
+        <item name="android:windowExitAnimation">@anim/product_popup_anim_out</item>
+    </style>
+
+    <style name="CommentDialogTheme" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@color/Transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/PopupStyle</item>
+    </style>
+
+    <style name="AssetLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingBottom">@dimen/common_margin</item>
+        <item name="android:paddingLeft">@dimen/common_padding_middle</item>
+        <item name="android:paddingRight">@dimen/common_padding_middle</item>
+        <item name="android:paddingTop">@dimen/common_margin</item>
+    </style>
+
+    <style name="AssetTitle" parent="common_text_normal">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="AssetContent" parent="common_text_normal">
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/grey_content</item>
+    </style>
+
+    <style name="AssetEdit" parent="common_text_normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:textColor">@color/grey</item>
+        <item name="android:background">@color/Transparent</item>
+    </style>
+
+</resources>

@@ -11,8 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.niles.pandian_login.R;
-import com.niles.pandian_login.http.LoginApi;
-import com.niles.pandian_login.http.callback.LogoutCallback;
 import com.niles.pandian_login.util.DialogHelper;
 import com.niles.pandian_login.util.Utils;
 
@@ -127,7 +125,7 @@ public abstract class BaseAppCompatActivity extends AppCompatActivity implements
     }
 
     protected void logout() {
-        LoginApi.getInstance().logout().enqueue(new LogoutCallback());
+//        LoginApi.getInstance().logout().enqueue(new LogoutCallback());
 //        RestClient.builder()
 //                .url("pandian/login/logout")
 //                .params("username", MyPreferences.getStringData(MyPreferences.USER_NAME))

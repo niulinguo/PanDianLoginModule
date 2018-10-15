@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/background"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/common_padding">
+
+            <ImageView
+                android:id="@+id/login_im"
+                android:layout_width="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/login_icon"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/ftp_view"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/common_padding"
+                android:paddingRight="@dimen/common_padding"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/login_edit_height"
+                    android:background="@drawable/input_bar_bg_normal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/register_icon_service" />
+
+                    <EditText
+                        android:id="@+id/register_server"
+                        style="@style/LoginEditText"
+                        android:layout_marginLeft="@dimen/common_margin"
+                        android:hint="服务地址"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/login_edit_height"
+                    android:layout_marginTop="@dimen/common_margin"
+                    android:background="@drawable/input_bar_bg_normal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/register_icon_port" />
+
+                    <EditText
+                        android:id="@+id/register_port"
+                        style="@style/LoginEditText"
+                        android:layout_marginLeft="10dp"
+                        android:digits="1234567890"
+                        android:hint="服务端口"
+                        android:inputType="number"
+                        android:maxLength="5"
+                        android:text="" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/login_edit_height"
+                    android:layout_marginTop="@dimen/common_margin"
+                    android:background="@drawable/input_bar_bg_normal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/login_icon_user" />
+
+                    <EditText
+                        android:id="@+id/register_name"
+                        style="@style/LoginEditText"
+                        android:layout_marginLeft="10dp"
+                        android:hint="@string/login_name"
+                        android:text="" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="@dimen/login_edit_height"
+                    android:layout_marginLeft="@dimen/common_padding"
+                    android:layout_marginRight="@dimen/common_padding"
+                    android:layout_marginTop="@dimen/common_margin"
+                    android:background="@drawable/input_bar_bg_normal">
+
+                    <ImageView
+                        android:id="@+id/image"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/login_icon_pwd" />
+
+                    <EditText
+                        android:id="@+id/register_password"
+                        style="@style/LoginEditText"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@+id/image"
+                        android:hint="@string/login_password"
+                        android:password="true"
+                        android:text="" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/login_edit_height"
+                android:layout_marginLeft="@dimen/common_padding"
+                android:layout_marginRight="@dimen/common_padding"
+                android:layout_marginTop="@dimen/common_padding"
+                android:background="@drawable/input_bar_bg_normal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/register_icon_service" />
+
+                <EditText
+                    android:id="@+id/http_server"
+                    style="@style/LoginEditText"
+                    android:layout_marginLeft="@dimen/common_margin"
+                    android:hint="http服务地址(xxx.xxx.x.x)"
+                    android:text="" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/login_edit_height"
+                android:layout_marginLeft="@dimen/common_padding"
+                android:layout_marginRight="@dimen/common_padding"
+                android:layout_marginTop="@dimen/common_margin"
+                android:background="@drawable/input_bar_bg_normal"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:src="@drawable/register_icon_port" />
+
+                <EditText
+                    android:id="@+id/http_port"
+                    style="@style/LoginEditText"
+                    android:layout_marginLeft="10dp"
+                    android:digits="1234567890"
+                    android:hint="http服务端口"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:text="" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/common_text_normal"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/common_padding"
+                android:layout_marginRight="@dimen/common_padding"
+                android:onClick="login"
+                android:text="用户登录" />
+
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/common_padding"
+                android:layout_marginRight="@dimen/common_padding"
+                android:layout_marginTop="@dimen/common_padding"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/test"
+                    style="@style/CommonButton"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:text="测试连接" />
+
+                <Button
+                    android:id="@+id/save"
+                    style="@style/CommonButton"
+                    android:layout_width="fill_parent"
+                    android:layout_marginTop="@dimen/common_padding"
+                    android:layout_weight="1"
+                    android:text="保存" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

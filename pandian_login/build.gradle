@@ -13,6 +13,11 @@ android {
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+            }
+        }
     }
 
     buildTypes {
@@ -32,7 +37,20 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    api 'com.github.niulinguo:PanDianBaseModule:v1.0'
+    api 'com.github.niulinguo:PanDianBaseModule:v1.3'
 
     api 'com.liuhc.library.dialog:DialogLibrary:1.0.9'
+
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+
+    api 'com.kejiwen.securitykeyboard:securitykeyboardlibrary:1.0.0'
+    api 'com.scottyab:secure-preferences-lib:0.1.4'
+
+    // 动态权限处理
+//    api 'com.github.hotchemi:permissionsdispatcher:3.2.0'
+//    annotationProcessor 'com.github.hotchemi:permissionsdispatcher-processor:3.2.0'
+
+    api('pub.devrel:easypermissions:0.2.1') {
+        exclude group: 'com.android.support'
+    }
 }

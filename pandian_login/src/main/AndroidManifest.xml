@@ -2,4 +2,10 @@
           package="com.niles.pandian_login">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application>
+        <activity android:name=".activity.SplashActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.RegisterActivity"/>
+    </application>
 </manifest>

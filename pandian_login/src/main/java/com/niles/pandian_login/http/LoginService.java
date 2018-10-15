@@ -20,5 +20,9 @@ public interface LoginService {
 
     @Headers("Content-Type: application/json")
     @POST("/pandian/login/logout")
-    Call<String> logout(@Body HashMap<String, Object> params);
+    Call<String> logout(@Body HashMap<String, String> params);
+
+    @Headers("Content-Type: application/json")
+    @POST("/pandian/login/signIn")
+    Call<String> login(@Body HashMap<String, String> params);
 }

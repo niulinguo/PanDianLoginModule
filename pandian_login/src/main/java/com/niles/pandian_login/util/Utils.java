@@ -29,6 +29,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.liuhc.library.dialog.DialogBuilder;
 import com.niles.pandian_login.BuildConfig;
 
 import org.json.JSONException;
@@ -54,13 +55,26 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Utils {
-    private static final String TAG = "Utils";
-
-    public static enum NetWorkMethod {NO, CMNET, CMWAP, WIFI}
-
     //注，正式上线后要改为false
     public static final boolean debugMode = BuildConfig.DEBUG;
+    private static final String TAG = "Utils";
     private static final boolean isShowToast = true;
+    private static final String EXTRA_ISINITDB = "ISINITDB";
+    private static final String EXTRA_DEF_KEYBOARDHEIGHT = "DEF_KEYBOARDHEIGHT";
+    public static int sDefRow = 7;
+    public static int sDefLine = 3;
+    /**
+     * 键盘默认高度 (dp)
+     */
+    private static int sDefKeyboardHeight = 300;
+    /**
+     * 屏幕宽度
+     */
+    private static int DisplayWidthPixels = 0;
+    /**
+     * 屏幕高度
+     */
+    private static int DisplayheightPixels = 0;
 
     public static int getDisplayHeight(Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -142,7 +156,6 @@ public class Utils {
         return year + "年" + month + "月" + day + "日";
 
     }
-
 
     public static String getSystemDotDate() {
         Calendar ca = Calendar.getInstance();
@@ -227,7 +240,6 @@ public class Utils {
         return false;
     }
 
-
     /**
      * @param context
      * @return
@@ -255,7 +267,6 @@ public class Utils {
         return netType;
     }
 
-
     /**
      * auther:liuHuaCheng
      * 提示用户网络错误对话框
@@ -280,13 +291,11 @@ public class Utils {
         builder.show();
     }
 
-
     public static void browser(Context context, String weburl) {
         Uri uri = Uri.parse(weburl);
         Intent it = new Intent(Intent.ACTION_VIEW, uri);
         context.startActivity(it);
     }
-
 
     public static int getScreenWidth(Context context) {
         DisplayMetrics dm = context.getResources().getDisplayMetrics();
@@ -352,7 +361,6 @@ public class Utils {
         }
     }
 
-
     public static String GetCurrentTime() {
         SimpleDateFormat sDateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         String date = sDateFormat.format(new Date());
@@ -372,7 +380,6 @@ public class Utils {
         String dateString = formatter.format(date);
         return dateString;
     }
-
 
     /**
      * 将长时间格式时间转换为字符串 yyyy-MM-dd HH:mm:ss
@@ -536,7 +543,6 @@ public class Utils {
 
     }
 
-
     public static String getDate() {
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 
@@ -656,29 +662,6 @@ public class Utils {
         return str == null || str.trim().length() == 0 || str.trim().equals("");
     }
 
-    /**
-     * 查询手机内非系统应用
-     *
-     * @param context
-     * @return
-     */
-    public List<PackageInfo> getAllAppsNoSystem(Context context) {
-        List<PackageInfo> apps = new ArrayList<PackageInfo>();
-        PackageManager pManager = context.getPackageManager();
-        //获取手机内所有应用
-        List<PackageInfo> paklist = pManager.getInstalledPackages(0);
-        for (int i = 0; i < paklist.size(); i++) {
-            PackageInfo pak = (PackageInfo) paklist.get(i);
-            //判断是否为非系统预装的应用程序
-            if ((pak.applicationInfo.flags & pak.applicationInfo.FLAG_SYSTEM) <= 0) {
-                // customs applications
-                apps.add(pak);
-            }
-        }
-        return apps;
-    }
-
-
     public static DatePicker getDatePicker(DatePicker datePicker, String time) {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -698,7 +681,6 @@ public class Utils {
                 cal.get(Calendar.DAY_OF_MONTH), null);
         return datePicker;
     }
-
 
     public static void tel(Context context, String tel) {
         if (!TextUtils.isEmpty(tel)) {
@@ -728,15 +710,6 @@ public class Utils {
         return sdkVersion;
     }
 
-    private static final String EXTRA_ISINITDB = "ISINITDB";
-    private static final String EXTRA_DEF_KEYBOARDHEIGHT = "DEF_KEYBOARDHEIGHT";
-    /**
-     * 键盘默认高度 (dp)
-     */
-    private static int sDefKeyboardHeight = 300;
-    public static int sDefRow = 7;
-    public static int sDefLine = 3;
-
     public static boolean isInitDb(Context context) {
         final SharedPreferences settings = PreferenceManager.getDefaultSharedPreferences(context);
         return settings.getBoolean(EXTRA_ISINITDB, false);
@@ -763,15 +736,6 @@ public class Utils {
         }
         Utils.sDefKeyboardHeight = height;
     }
-
-    /**
-     * 屏幕宽度
-     */
-    private static int DisplayWidthPixels = 0;
-    /**
-     * 屏幕高度
-     */
-    private static int DisplayheightPixels = 0;
 
     private static void getDisplayMetrics(Context context) {
         DisplayMetrics dm = new DisplayMetrics();
@@ -878,7 +842,6 @@ public class Utils {
         return bitmap;
     }
 
-
     public static boolean isMobileNO(String mobiles) {
 
         Pattern p = Pattern.compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
@@ -928,6 +891,30 @@ public class Utils {
         }
         return df.format(number);
     }
+
+    /**
+     * 查询手机内非系统应用
+     *
+     * @param context
+     * @return
+     */
+    public List<PackageInfo> getAllAppsNoSystem(Context context) {
+        List<PackageInfo> apps = new ArrayList<PackageInfo>();
+        PackageManager pManager = context.getPackageManager();
+        //获取手机内所有应用
+        List<PackageInfo> paklist = pManager.getInstalledPackages(0);
+        for (int i = 0; i < paklist.size(); i++) {
+            PackageInfo pak = (PackageInfo) paklist.get(i);
+            //判断是否为非系统预装的应用程序
+            if ((pak.applicationInfo.flags & pak.applicationInfo.FLAG_SYSTEM) <= 0) {
+                // customs applications
+                apps.add(pak);
+            }
+        }
+        return apps;
+    }
+
+    public static enum NetWorkMethod {NO, CMNET, CMWAP, WIFI}
 
 
 }

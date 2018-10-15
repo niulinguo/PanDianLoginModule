@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list
+        android:oneshot="false"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+    <!--<item android:drawable="@drawable/progress_loading_image_01" android:duration="150"></item>-->
+    <!--<item android:drawable="@drawable/progress_loading_image_02" android:duration="150"></item>-->
+    <!--<item android:drawable="@drawable/progress_loading_image_03" android:duration="150"></item>-->
+    <!--<item android:drawable="@drawable/progress_loading_image_04" android:duration="150"></item>-->
+
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading01"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading02"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading03"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading04"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading05"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading06"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading07"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading08"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading09"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading10"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading11"
+                android:gravity="left"/>
+    </item>
+    <item android:duration="150">
+        <clip
+                android:clipOrientation="horizontal"
+                android:drawable="@drawable/loading12"
+                android:gravity="left"/>
+    </item>
+
+</animation-list>

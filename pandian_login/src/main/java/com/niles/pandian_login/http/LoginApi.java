@@ -1,7 +1,8 @@
 package com.niles.pandian_login.http;
 
+import com.niles.appbase.AppManager;
+import com.niles.appbase.utils.Installation;
 import com.niles.http.HttpManager;
-import com.niles.pandian_base.PanDianAppManager;
 
 import java.util.HashMap;
 
@@ -18,7 +19,7 @@ public class LoginApi {
     private final HttpManager mHttpManager;
 
     private LoginApi() {
-        mHttpManager = PanDianAppManager.getInstance().getHttpManager();
+        mHttpManager = AppManager.getInstance().getHttpManager();
     }
 
     public static LoginApi getInstance() {
@@ -29,10 +30,18 @@ public class LoginApi {
         return mHttpManager.getService(LoginService.class).testBaseUrl();
     }
 
-    public Call<String> logout() {
-        HashMap<String, Object> params = new HashMap<>();
-        params.put("username", "");
-        params.put("deviceId", "");
+    public Call<String> logout(String username) {
+        HashMap<String, String> params = new HashMap<>();
+        params.put("username", username);
+        params.put("deviceId", Installation.id(AppManager.getInstance().app()));
         return mHttpManager.getService(LoginService.class).logout(params);
+    }
+
+    public Call<String> login(String username, String password) {
+        HashMap<String, String> params = new HashMap<>();
+        params.put("username", username);
+        params.put("password", password);
+        params.put("deviceId", Installation.id(AppManager.getInstance().app()));
+        return mHttpManager.getService(LoginService.class).login(params);
     }
 }

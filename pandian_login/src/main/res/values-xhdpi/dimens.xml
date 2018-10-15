@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="asset_detail_width">310dp</dimen>
+    <dimen name="asset_width_half">110dp</dimen>
+
+</resources>

@@ -19,6 +19,6 @@ public abstract class StringCallback implements Callback<String> {
 
     @Override
     public void onFailure(Call<String> call, Throwable t) {
-
+        t.printStackTrace();
     }
 }
