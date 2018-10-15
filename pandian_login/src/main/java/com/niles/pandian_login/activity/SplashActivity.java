@@ -21,7 +21,7 @@ import java.util.TimerTask;
  * Created by:Liuhuacheng
  * Created time:15-5-25
  */
-@Route(path = "/activity/splash")
+@Route(path = "/login/activity/splash")
 public class SplashActivity extends BaseActivity {
     private Context context;
     private Timer mTimer;

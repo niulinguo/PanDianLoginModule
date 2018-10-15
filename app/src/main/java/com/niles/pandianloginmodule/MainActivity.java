@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ARouter.getInstance().build("/activity/splash").navigation();
+        ARouter.getInstance().build("/login/activity/splash").navigation();
         finish();
     }
 }

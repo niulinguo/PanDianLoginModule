@@ -11,7 +11,7 @@ import com.niles.pandian_base.service.LoginModuleService;
  * Date 2018/10/15 09:27
  * Email niulinguo@163.com
  */
-@Route(path = "/service/login", name = "login service")
+@Route(path = "/login/service", name = "login service")
 public class LoginModuleServiceImpl implements LoginModuleService {
     @Override
     public UserModel getLoginInfo() {

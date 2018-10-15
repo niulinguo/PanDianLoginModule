@@ -133,7 +133,6 @@ public class LoginActivity extends BaseAppCompatActivity {
         }
     }
 
-
     // 登录完成数据处理
     public void loginFinish() {
         // 修改为http请求
@@ -188,7 +187,7 @@ public class LoginActivity extends BaseAppCompatActivity {
     }
 
     public void loginSuccess() {
-        ARouter.getInstance().build("/activity/main").navigation(this, new NavCallback() {
+        ARouter.getInstance().build("/main/activity/main").navigation(this, new NavCallback() {
             @Override
             public void onArrival(Postcard postcard) {
 
