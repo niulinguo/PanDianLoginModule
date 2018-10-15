@@ -187,7 +187,7 @@ public class LoginActivity extends BaseAppCompatActivity {
     }
 
     public void loginSuccess() {
-        ARouter.getInstance().build("/main/activity/main").navigation(this, new NavCallback() {
+        ARouter.getInstance().build("/pandian_main/activity/main").navigation(this, new NavCallback() {
             @Override
             public void onArrival(Postcard postcard) {
 
@@ -196,7 +196,7 @@ public class LoginActivity extends BaseAppCompatActivity {
             @Override
             public void onLost(Postcard postcard) {
                 super.onLost(postcard);
-                ToastUtils.showLong("没有找到 /activity/main");
+                ToastUtils.showLong("没有找到 /pandian_main/activity/main");
             }
         });
     }

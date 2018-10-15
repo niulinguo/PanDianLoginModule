@@ -3,9 +3,9 @@ package com.niles.pandian_login.http;
 import java.util.HashMap;
 
 import retrofit2.Call;
-import retrofit2.http.Body;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
 /**
@@ -18,11 +18,11 @@ public interface LoginService {
     @GET("/")
     Call<String> testBaseUrl();
 
-    @Headers("Content-Type: application/json")
+    @FormUrlEncoded
     @POST("/pandian/login/logout")
-    Call<String> logout(@Body HashMap<String, String> params);
+    Call<String> logout(@FieldMap HashMap<String, String> params);
 
-    @Headers("Content-Type: application/json")
+    @FormUrlEncoded
     @POST("/pandian/login/signIn")
-    Call<String> login(@Body HashMap<String, String> params);
+    Call<String> login(@FieldMap HashMap<String, String> params);
 }
